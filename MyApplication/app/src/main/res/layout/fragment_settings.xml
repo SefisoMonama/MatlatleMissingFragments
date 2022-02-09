@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/setting_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="16dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/black"
+        app:title="Settings"
+        app:titleTextColor="@color/black" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personalDetails_constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/edittextshape"
+        app:layout_constraintTop_toBottomOf="@id/setting_toolbar"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/personalImage_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_circled_user_female_skin_type_4_100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameSurname_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Sefiso Monama"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@id/personalImage_imageView"
+            app:layout_constraintTop_toTopOf="@id/personalImage_imageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="edit personal details"
+            app:layout_constraintStart_toStartOf="@id/nameSurname_textView"
+            app:layout_constraintTop_toBottomOf="@id/nameSurname_textView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/personalImage_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/personalImage_imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintEnd_toEndOf="@id/personalDetails_constraintLayout"
+        app:layout_constraintStart_toStartOf="@id/personalDetails_constraintLayout"
+        app:layout_constraintTop_toBottomOf="@id/personalDetails_constraintLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_toolBar">
+
+                <Switch
+                    android:id="@+id/darkMode_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:drawableStart="@drawable/icons8_night_32"
+                    android:padding="12dp"
+                    android:text="Dark Mode"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/profile_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Profile"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/darkMode_switch"
+                    app:layout_constraintStart_toStartOf="@id/darkMode_switch"
+                    app:layout_constraintTop_toBottomOf="@id/darkMode_switch" />
+
+                <TextView
+                    android:id="@+id/edtProfile_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/icons8_map_editing_32"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:drawablePadding="32dp"
+                    android:padding="12dp"
+                    android:text="Edit Profile"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/profile_textView"
+                    app:layout_constraintStart_toStartOf="@id/profile_textView"
+                    app:layout_constraintTop_toBottomOf="@id/profile_textView" />
+
+                <TextView
+                    android:id="@+id/changePassword_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/icons8_keepass_32"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:drawablePadding="32dp"
+                    android:padding="12dp"
+                    android:text="Change Password"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/edtProfile_textView"
+                    app:layout_constraintStart_toStartOf="@id/edtProfile_textView"
+                    app:layout_constraintTop_toBottomOf="@id/edtProfile_textView" />
+
+                <TextView
+                    android:id="@+id/notifications_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Notifications"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/changePassword_textView"
+                    app:layout_constraintStart_toStartOf="@id/changePassword_textView"
+                    app:layout_constraintTop_toBottomOf="@id/changePassword_textView" />
+
+                <Switch
+                    android:id="@+id/enableNotification_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/icons8_notification_32"
+                    android:drawablePadding="32dp"
+                    android:padding="12dp"
+                    android:text="Notifications"
+                    app:layout_constraintEnd_toEndOf="@id/notifications_textView"
+                    app:layout_constraintStart_toStartOf="@id/notifications_textView"
+                    app:layout_constraintTop_toBottomOf="@id/notifications_textView" />
+
+                <TextView
+                    android:id="@+id/about_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="About"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/enableNotification_switch"
+                    app:layout_constraintStart_toStartOf="@id/enableNotification_switch"
+                    app:layout_constraintTop_toBottomOf="@id/enableNotification_switch" />
+
+                <TextView
+                    android:id="@+id/aboutMatlatle_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/icons8_help_32"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:drawablePadding="32dp"
+                    android:padding="12dp"
+                    android:text="About Matlatle"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/about_textView"
+                    app:layout_constraintStart_toStartOf="@id/about_textView"
+                    app:layout_constraintTop_toBottomOf="@id/about_textView" />
+
+                <Button
+                    android:id="@+id/logout_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/white"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:drawablePadding="32dp"
+                    android:padding="12dp"
+                    android:shadowRadius="3f"
+                    android:text="Logout"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/aboutMatlatle_textView"
+                    app:layout_constraintStart_toStartOf="@id/aboutMatlatle_textView"
+                    app:layout_constraintTop_toBottomOf="@id/aboutMatlatle_textView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="App ver 1.0.1"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
